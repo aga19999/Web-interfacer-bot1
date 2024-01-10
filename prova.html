@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/siimple/siimple.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <h2 style = "color: #022464; text-align: center"><em><br>Come stai oggi?</br></em></h2>
+</head>
+<body>
+    <p>Inserisci nome: </p>
+    <input type="text" id = "casella di testo">
+    <button id = "Clicca qui">CLICCA QUI</button>
+
+</body>
+<script type = "text/javascript">
+    const caselladitesto = document.getElementById("casellatesto");
+    const pulsanteclicca = document.getElementById("pulsanteclicca")
+    pulsanteclicca.addEventListener("click", function(){
+        datidainviare = {
+            nome: casellatesto.value,
+        }
+        window.Telegram.WebApp.sendData(JSON.stringify(datidainviare));
+    });
+    Telegram.WebApp.expand();
+</script>
+</html>

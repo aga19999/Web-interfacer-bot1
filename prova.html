@@ -16,12 +16,6 @@
         .custom-block p {
             margin-bottom: 10px; /* Margine inferiore per i paragrafi */
         }
-
-        /* Aggiunta di una classe personalizzata alle colonne */
-        .custom-col {
-            flex: 0 0 100%; /* Impostazione delle colonne su larghezza 100% su dispositivi mobili */
-            max-width: 100%; /* Impostazione della larghezza massima su 100% */
-        }
     </style>
 </head>
 <body>
@@ -29,29 +23,59 @@
     <div class="container">
         <h4 class="text-center mt-3">Scala di valutazione della sessione</h4>
 
-        <div class="row">
-            <div class="col-md-4 custom-col text-center">
+        <div class="row d-flex flex-wrap">
+            <div class="col-md-4 col-12 text-center">
                 <div class="custom-block">
                     <p>Non mi sono sentito ascoltato, compreso e rispettato.</p>
                 </div>
+                <div class="custom-block">
+                    <p>Non abbiamo lavorato né parlato di ciò su cui volevo lavorare e parlare.</p>
+                </div>
+                <div class="custom-block">
+                    <p>L'approccio del terapeuta non è adatto a me.</p>
+                </div>
+                <div class="custom-block">
+                    <p>C'era qualcosa che mancava nella sessione di oggi.</p>
+                </div>
             </div>
 
-            <div class="col-md-4 custom-col text-center">
+            <div class="col-md-4 col-12 text-center">
                 <label for="rangeInput1">Relazioni:</label>
                 <div class="custom-block">
                     <input type="range" class="form-control-range" id="rangeInput1" name="rangeInput1" min="0" max="50">
                 </div>
+
+                <label for="rangeInput2">Obiettivi e argomenti:</label>
+                <div class="custom-block">
+                    <input type="range" class="form-control-range" id="rangeInput2" name="rangeInput2" min="0" max="50">
+                </div>
+
+                <label for="rangeInput3">Approccio e metodo:</label>
+                <div class="custom-block">
+                    <input type="range" class="form-control-range" id="rangeInput3" name="rangeInput3" min="0" max="50">
+                </div>
+
+                <label for="rangeInput4">Complessivamente:</label>
+                <div class="custom-block">
+                    <input type="range" class="form-control-range" id="rangeInput4" name="rangeInput4" min="0" max="50">
+                </div>
             </div>
 
-            <div class="col-md-4 custom-col text-center">
+            <div class="col-md-4 col-12 text-center">
                 <div class="custom-block">
                     <p>Mi sono sentito ascoltato, compreso e rispettato.</p>
                 </div>
+                <div class="custom-block">
+                    <p>Abbiamo lavorato e parlato di ciò su cui volevo lavorare e parlare.</p>
+                </div>
+                <div class="custom-block">
+                    <p>L'approccio del terapeuta è adatto a me.</p>
+                </div>
+                <div class="custom-block">
+                    <p>Nel complesso, la sessione di oggi è giusta per me.</p>
+                </div>
             </div>
         </div>
-
-        <!-- Ripetere lo stesso modello per le altre righe di colonne -->
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

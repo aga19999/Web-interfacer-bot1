@@ -16,48 +16,54 @@
         .custom-block p {
             margin-bottom: 10px; /* Margine inferiore per i paragrafi */
         }
+
+        tr {
+            font-size: 12px; /* Imposta la dimensione del font desiderata */
+        }
+
     </style>
 </head>
 <body>
     <table class="table">
         <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Frase 1</th>
-                <th scope="col">Slider</th>
-                <th scope="col">Frase 2</th>
-            </tr>
+      <tr>
+          <th colspan=""></th>
+          <th colspan="">Relazioni:</th>
+          <th colspan=""></th>
+      </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row">1</th>
                 <td>Non mi sono sentito ascoltato, compreso e rispettato</td>
                 <td>
-                    <label for="rangeInput1">Relazioni:</label>
                     <div class="custom-block">
                         <input type="range" class="form-control-range" id="rangeInput1" name="rangeInput1" min="1" max="5">
                     </div>
                 </td>
                 <td>Mi sono sentito ascoltato, compreso e rispettato</td>
             </tr>
-
             <tr>
-                <th scope="row">2</th>
+                <th colspan=""></th>
+                    <th colspan="">Obbiettivi e argomenti:</th>
+                <th colspan=""></th>
+            </tr>
+            <tr>
                 <td>Non abbiamo lavorato né parlato di ciò su cui volevo lavorare e parlare</td>
                 <td>
-                    <label for="rangeInput2">Obiettivi e argomenti:</label>
                     <div class="custom-block">
                         <input type="range" class="form-control-range" id="rangeInput2" name="rangeInput2" min="1" max="5">
                     </div>
                 </td>
                 <td>Abbiamo lavorato e parlato di ciò su cui volevo lavorare e parlare</td>
             </tr>
-
             <tr>
-                <th scope="row">3</th>
+                <th colspan=""></th>
+                    <th colspan="">Approccio e metodo:</th>
+                <th colspan=""></th>
+            </tr>
+            <tr>
                 <td>L'approccio del terapeuta non è adatto a me</td>
                 <td>
-                    <label for="rangeInput3">Approccio e metodo:</label>
                     <div class="custom-block">
                         <input type="range" class="form-control-range" id="rangeInput3" name="rangeInput3" min="1" max="5">
                     </div>
@@ -72,6 +78,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
 
 

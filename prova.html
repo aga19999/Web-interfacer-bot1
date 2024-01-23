@@ -2,27 +2,81 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/siimple/siimple.css" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <h2 style = "color: #022464; text-align: center"><em><br>Come stai oggi?</br></em></h2>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .custom-block {
+            background-color: #f8f9fa; /* Colore di sfondo */
+            padding: 20px; /* Spaziatura interna */
+            border: 1px solid #dee2e6; /* Bordo */
+            border-radius: 5px; /* Bordo arrotondato */
+            margin-bottom: 20px; /* Margine inferiore */
+        }
+
+        .custom-block p {
+            margin-bottom: 10px; /* Margine inferiore per i paragrafi */
+        }
+    </style>
 </head>
 <body>
-    <p>Inserisci nome: </p>
-    <input type="text" id = "casella di testo">
-    <button id = "Clicca qui">CLICCA QUI</button>
 
+    <div class="container">
+        <p><h4 class="text-center">Scala di valutazione della sessione</h4></p>
+        <div class="row align-items-stretch">
+            <div class="col-md-4 text-center d-flex flex-column">
+                <div class="custom-block h-100">
+                    <p>Non mi sono sentito ascoltato, compreso e rispettato.</p>
+                </div>
+                <div class="custom-block h-100">
+                    <p>Non abbiamo lavorato né parlato di ciò su cui volevo lavorare e parlare.</p>
+                </div>
+                <div class="custom-block h-100">
+                    <p>L'approccio del terapeuta non è adatto a me.</p>
+                </div>
+                <div class="custom-block h-100">
+                    <p>C'era qualcosa che mancava nella sessione di oggi.</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center d-flex flex-column">
+                <label for="rangeInput1">Relazioni:</label>
+                <div class="custom-block h-100">
+                    <input type="range" class="form-control-range" id="rangeInput1" name="rangeInput1" min="0" max="50">
+                </div>
+
+                <label for="rangeInput2">Obiettivi e argomenti:</label>
+                <div class="custom-block h-100">
+                    <input type="range" class="form-control-range" id="rangeInput2" name="rangeInput2" min="0" max="50">
+                </div>
+
+                <label for="rangeInput3">Approccio e metodo:</label>
+                <div class="custom-block h-100">
+                    <input type="range" class="form-control-range" id="rangeInput3" name="rangeInput3" min="0" max="50">
+                </div>
+
+                <label for="rangeInput4">Complessivamente:</label>
+                <div class="custom-block h-100">
+                    <input type="range" class="form-control-range" id="rangeInput4" name="rangeInput4" min="0" max="50">
+                </div>
+            </div>
+
+            <div class="col-md-4 text-center d-flex flex-column">
+                <div class="custom-block h-100">
+                    <p>Mi sono sentito ascoltato, compreso e rispettato.</p>
+                </div>
+                <div class="custom-block h-100">
+                    <p>Abbiamo lavorato e parlato di ciò su cui volevo lavorare e parlare.</p>
+                </div>
+                <div class="custom-block h-100">
+                    <p>L'approccio del terapeuta è adatto a me.</p>
+                </div>
+                <div class="custom-block h-100">
+                    <p>Nel complesso, la sessione di oggi è giusta per me.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-<script type = "text/javascript">
-    const caselladitesto = document.getElementById("casellatesto");
-    const pulsanteclicca = document.getElementById("pulsanteclicca")
-    pulsanteclicca.addEventListener("click", function(){
-        datidainviare = {
-            nome: casellatesto.value,
-        }
-        window.Telegram.WebApp.sendData(JSON.stringify(datidainviare));
-    });
-    Telegram.WebApp.expand();
-</script>
 </html>

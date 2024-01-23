@@ -19,62 +19,54 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-4 col-sm-4 col-md-4">
-            <div class="custom-block">
-            <p>Non mi sono sentito ascoltato, compreso, e rispettato.</p>
-            </div>
-            <div class="custom-block">
-            <p>Non abbiamo lavorato né parlato di ciò su cui volevo lavorare e parlare.</p>
-            </div>
-            <div class="custom-block">
-            <p>L'approccio del terapeuta non è adatto a me.</p>
-            </div>
-            <div class="custom-block">
-            <p>C'era qualcosa che mancava nella sessione di oggi.</p>
-            </div>
-        </div>
-		<div class="col-4 col-sm-4 col-md-4">
-            <label for="rangeInput1">Relazioni:</label>
-                <div class="custom-block">
-                    <input type="range" class="form-control-range" id="rangeInput1" name="rangeInput1" min="0" max="50">
+    <table class="table">
+  <thead>
+    <tr>
+       <th scope="col">Frase 1</th>
+      <th scope="col">slider</th>
+      <th scope="col">Frase 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Non mi sono sentito ascoltato, compreso e rispettato</th>
+      <td>
+          <label for="rangeInput1">Relazioni:</label>
+          <div class="custom-block">
+                    <input type="range" class="form-control-range" id="rangeInput1" name="rangeInput1" min="1" max="5">
                 </div>
+      </td>
+      <td>Mi sono sentito ascoltato, compreso e rispettato</td>
+    </tr>
 
-                <label for="rangeInput2">Obiettivi e argomenti:</label>
-                <div class="custom-block">
-                    <input type="range" class="form-control-range" id="rangeInput2" name="rangeInput2" min="0" max="50">
+    <tr>
+      <th scope="row">Non abbiamo lavorato né parlato di ciò su cui volevo lavorare e parlare</th>
+      <td>
+          <label for="rangeInput2">Obbiettivi e argomenti:</label>
+          <div class="custom-block">
+                    <input type="range" class="form-control-range" id="rangeInput2" name="rangeInput1" min="1" max="5">
                 </div>
+      </td>
+      <td>Abbiamo lavorato e parlato di ciò su cui volevo lavorare e parlare</td>
+    </tr>
 
-                <label for="rangeInput3">Approccio e metodo:</label>
-                <div class="custom-block">
-                    <input type="range" class="form-control-range" id="rangeInput3" name="rangeInput3" min="0" max="50">
+    <tr>
+      <th scope="row">L'approccio del terapeuta non è adatto a me</th>
+      <td>
+          <label for="rangeInput3">Approccio e metodo:</label>
+          <div class="custom-block">
+                    <input type="range" class="form-control-range" id="rangeInput3" name="rangeInput1" min="1" max="5">
                 </div>
-
-                <label for="rangeInput4">Complessivamente:</label>
-                <div class="custom-block">
-                    <input type="range" class="form-control-range" id="rangeInput4" name="rangeInput4" min="0" max="50">
-                </div>
-        </div>
-		<div class="col-4 col-sm-4 col-md-4">
-            <div class="custom-block">
-            <p>Mi sono sentito ascoltato, compreso, e rispettato.</p>
-            </div>
-            <div class="custom-block">
-            <p>Abbiamo lavorato e parlato di ciò su cui volevo lavorare e parlare.</p>
-            </div>
-            <div class="custom-block">
-            <p>L'approccio del terapeuta è adatto a me.</p>
-            </div>
-            <div class="custom-block">
-            <p>Nel complesso, la sessione di oggi è giusta per me.</p>
-            </div>
-        </div>
-	</div>
-</div>
-
+      </td>
+      <td>L'approccio del terapeuta è adatto a me</td>
+    </tr>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </tbody>
+    </table>
 </body>
 </html>
+
+
+

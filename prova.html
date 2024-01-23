@@ -5,24 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .info-box {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            text-align: center;
+        .custom-block {
+            background-color: #f8f9fa; /* Colore di sfondo */
+            padding: 20px; /* Spaziatura interna */
+            border: 1px solid #dee2e6; /* Bordo */
+            border-radius: 5px; /* Bordo arrotondato */
+            margin-bottom: 20px; /* Margine inferiore */
+        }
+
+        .custom-block p {
+            margin-bottom: 10px; /* Margine inferiore per i paragrafi */
         }
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-4 col-sm-4 col-md-4">Non mi sono sentito ascoltato, compreso, e rispettato.</div>
-		<div class="col-4 col-sm-4 col-md-4">slider</div>
-		<div class="col-4 col-sm-4 col-md-4">Mi sono sentito ascoltato, compreso, e rispettato.</div>
-	</div>
-</div>
+
+    <div class="container">
+        <p><h4 class="text-center">Scala di valutazione della sessione</h4></p>
+        <div class="row">
+            <div class="col-md-4 col-12 text-center">
+                <div class="custom-block">
+                    <p>Non mi sono sentito ascoltato, compreso e rispettato.</p>
+                </div>
+                <div class="custom-block">
+                    <p>Non abbiamo lavorato né parlato di ciò su cui volevo lavorare e parlare.</p>
+                </div>
+                <div class="custom-block">
+                    <p>L'approccio del terapeuta non è adatto a me.</p>
+                </div>
+                <div class="custom-block">
+                    <p>C'era qualcosa che mancava nella sessione di oggi.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-12 text-center">
+                <label for="rangeInput1">Relazioni:</label>
+                <div class="custom-block">
+                    <input type="range" class="form-control-range" id="rangeInput1" name="rangeInput1" min="0" max="50">
+                </div>
+
+                <label for="rangeInput2">Obiettivi e argomenti:</label>
+                <div class="custom-block">
+                    <input type="range" class="form-control-range" id="rangeInput2" name="rangeInput2" min="0" max="50">
+                </div>
+
+                <label for="rangeInput3">Approccio e metodo:</label>
+                <div class="custom-block">
+                    <input type="range" class="form-control-range" id="rangeInput3" name="rangeInput3" min="0" max="50">
+                </div>
+
+                <label for="rangeInput4">Complessivamente:</label>
+                <div class="custom-block">
+                    <input type="range" class="form-control-range" id="rangeInput4" name="rangeInput4" min="0" max="50">
+                </div>
+            </div>
+
+            <div class="col-md-4 col-12 text-center">
+                <div class="custom-block">
+                    <p>Mi sono sentito ascoltato, compreso e rispettato.</p>
+                </div>
+                <div class="custom-block">
+                    <p>Abbiamo lavorato e parlato di ciò su cui volevo lavorare e parlare.</p>
+                </div>
+                <div class="custom-block">
+                    <p>L'approccio del terapeuta è adatto a me.</p>
+                </div>
+                <div class="custom-block">
+                    <p>Nel complesso, la sessione di oggi è giusta per me.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

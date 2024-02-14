@@ -107,7 +107,8 @@
             mainButton.show();
 
             mainButton.onClick(function () {
-                window.Telegram.WebApp.sendData(JSON.stringify($scope.scalaValutazione));
+                // Utilizziamo JSON.stringify per ottenere una stringa JSON leggibile
+                window.Telegram.WebApp.sendData({ scalaValutazione: $scope.scalaValutazione });
             });
 
             $scope.conferma = function () {
@@ -116,7 +117,7 @@
 
             $timeout(function () {
                 $scope.scalaValutazione.forEach(function (item) {
-                    item.value = 5;
+                    item.value = 3;
                 });
             });
 

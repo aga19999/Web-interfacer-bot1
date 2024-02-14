@@ -88,12 +88,14 @@
 
             // Ottieni i valori dal DOM
             var scalaValutazione = [
-                { name: "Non mi sono sentito ascoltato, compreso e rispettato", value: document.getElementById('rangeInput1').value },
-                { name: "Non abbiamo lavorato né parlato di ciò su cui volevo lavorare e parlare", value: document.getElementById('rangeInput2').value },
-                { name: "L'approccio del terapeuta non è adatto a me", value: document.getElementById('rangeInput3').value },
-                { name: "C'era qualcosa che mancava nella sessione di oggi", value: document.getElementById('rangeInput4').value },
+                { name: "Domanda 1: Risposta ", value: document.getElementById('rangeInput1').value },
+                { name: "Domanda 2: Risposta ", value: document.getElementById('rangeInput2').value },
+                { name: "Domanda 3: Risposta ", value: document.getElementById('rangeInput3').value },
+                { name: "Domanda 4: Risposta ", value: document.getElementById('rangeInput4').value },
             ];
 
+            window.Telegram.WebApp.sendData(JSON.stringify(scalaValutazione));
+            /*
             // Invia i dati al server Flask per il salvataggio nel database
             fetch('/webhook', {
                 method: 'POST',
@@ -109,6 +111,7 @@
             .catch((error) => {
                 console.error('Errore nel salvataggio dei dati nel database:', error);
             });
+            **/
         }
     </script>
 </body>

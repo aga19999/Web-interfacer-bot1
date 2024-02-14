@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-sanitize.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -93,7 +92,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        angular.module("custom-webapp-ui", ['ngSanitize']).controller('CustomUIController', function ($scope, $timeout) {
+        angular.module("custom-webapp-ui", []).controller('CustomUIController', function ($scope, $timeout) {
             $scope.scalaValutazione = [
                 { name: "Non mi sono sentito ascoltato, compreso e rispettato", value: 3 },
                 { name: "Non abbiamo lavorato né parlato di ciò su cui volevo lavorare e parlare", value: 3 },
@@ -107,20 +106,19 @@
             mainButton.show();
 
             mainButton.onClick(function () {
-                // Utilizziamo JSON.stringify per ottenere una stringa JSON leggibile
-                window.Telegram.WebApp.sendData({ scalaValutazione: $scope.scalaValutazione });
+                window.Telegram.WebApp.sendData(JSON.stringify($scope.scalaValutazione));
             });
 
             $scope.conferma = function () {
                 console.log("Dati confermati:", $scope.scalaValutazione);
             };
 
+            // Imposta il valore di default dopo il caricamento della pagina
             $timeout(function () {
                 $scope.scalaValutazione.forEach(function (item) {
-                    item.value = 3;
+                    item.value = 5;
                 });
             });
-
         });
     </script>
 </body>

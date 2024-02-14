@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="custom-webapp-ui" lang="it">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <style>
         .custom-block {
             background-color: #f8f9fa;
@@ -29,15 +26,10 @@
         }
     </style>
 </head>
-<body ng-app="custom-webapp-ui" ng-controller="CustomUIController">
+<body>
     <div class="container-fluid">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col" colspan="3" class="text-center">Relazioni:</th>
-                </tr>
-            </thead>
-            <tbody>
+        <form onsubmit="salvaPreferenze()">
+            <table class="table">
                 <tr>
                     <td>Non mi sono sentito ascoltato, compreso e rispettato</td>
                     <td>
@@ -83,43 +75,39 @@
                     </td>
                     <td>Nel complesso, la sessione di oggi è giusta per me</td>
                 </tr>
-            </tbody>
-        </table>
+            </table>
+            <p align="center"><button type="submit" class="btn-primary btn-lg">Salva Preferenze</button></p>
+        </form>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script>
-        angular.module("custom-webapp-ui", []).controller('CustomUIController', function ($scope, $timeout) {
-            $scope.scalaValutazione = [
-                { name: "Non mi sono sentito ascoltato, compreso e rispettato", value: 3 },
-                { name: "Non abbiamo lavorato né parlato di ciò su cui volevo lavorare e parlare", value: 3 },
-                { name: "L'approccio del terapeuta non è adatto a me", value: 3 },
-                { name: "C'era qualcosa che mancava nella sessione di oggi", value: 3 }
+        function salvaPreferenze(event) {
+            event.preventDefault();
+
+            // Ottieni i valori dal DOM
+            var scalaValutazione = [
+                { name: "Non mi sono sentito ascoltato, compreso e rispettato", value: document.getElementById('rangeInput1').value },
+                { name: "Non abbiamo lavorato né parlato di ciò su cui volevo lavorare e parlare", value: document.getElementById('rangeInput2').value },
+                { name: "L'approccio del terapeuta non è adatto a me", value: document.getElementById('rangeInput3').value },
+                { name: "C'era qualcosa che mancava nella sessione di oggi", value: document.getElementById('rangeInput4').value },
             ];
 
-            const mainButton = window.Telegram.WebApp.MainButton;
-            mainButton.text = "Salva Preferenze";
-            mainButton.enable();
-            mainButton.show();
-
-            mainButton.onClick(function () {
-                window.Telegram.WebApp.sendData(JSON.stringify($scope.scalaValutazione));
+            // Invia i dati al server Flask per il salvataggio nel database
+            fetch('/webhook', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(scalaValutazione),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Dati salvati con successo nel database:', data);
+            })
+            .catch((error) => {
+                console.error('Errore nel salvataggio dei dati nel database:', error);
             });
-
-            $scope.conferma = function () {
-                console.log("Dati confermati:", $scope.scalaValutazione);
-            };
-
-            // Imposta il valore di default dopo il caricamento della pagina
-            $timeout(function () {
-                $scope.scalaValutazione.forEach(function (item) {
-                    item.value = 5;
-                });
-            });
-        });
+        }
     </script>
 </body>
 </html>
